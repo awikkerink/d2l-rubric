@@ -1,10 +1,12 @@
 <link rel="import" href="../../polymer/polymer.html">
 <link rel="import" href="../../d2l-polymer-siren-behaviors/store/siren-action-behavior.html">
-<link rel="import" href="./../localize-behavior.html">
 <link rel="import" href="../../d2l-hm-constants-behavior/d2l-hm-constants-behavior.html">
 <link rel="import" href="../../d2l-table/d2l-table-shared-styles.html">
 
 <link rel="import" href="../d2l-rubric-entity-behavior.html">
+<link rel="import" href="../localize-behavior.html">
+<link rel="import" href="./d2l-rubric-overall-level-description-editor.html">
+<link rel="import" href="./d2l-rubric-overall-level-feedback-editor.html">
 
 <dom-module id="d2l-rubric-overall-levels-editor">
 	<template strip-whitespace>
@@ -33,7 +35,7 @@
 			}
 
 			.cell {
-				padding: 0.5rem;
+				padding: 0;
 			}
 
 			.col-button {
@@ -176,10 +178,14 @@
 			<div class="gutter-left"></div>
 			<div class="col-button" left></div>
 			<div class="col-center">
-				<template is="dom-repeat" items="[[_overallLevels]]" as="overallLevel">
+				<template is="dom-repeat" items="[[_overallLevels]]" as="overallLevel" index-as="cellIndex" rendered-item-count="{{descriptionCount}}">
 					<div class="cell">
-						<!-- description -->
-						<!-- <d2l-rubric-overall-level-editor href="[[_getSelfLink(overallLevel)]]" token="[[token]]"></d2l-rubric-overall-level-editor> -->
+						<d2l-rubric-overall-level-description-editor
+							href="[[_getSelfLink(overallLevel)]]"
+							token="[[token]]"
+							level-index="[[cellIndex]]"
+							level-count="[[descriptionCount]]"
+						></d2l-rubric-overall-level-description-editor>
 					</div>
 				</template>
 			</div>
@@ -199,10 +205,14 @@
 			<div class="gutter-left"></div>
 			<div class="col-button" left></div>
 			<div class="col-center">
-				<template is="dom-repeat" items="[[_overallLevels]]" as="overallLevel">
+				<template is="dom-repeat" items="[[_overallLevels]]" as="overallLevel" index-as="cellIndex" rendered-item-count="{{feedbackCount}}">
 					<div class="cell">
-						<!-- description -->
-						<!-- <d2l-rubric-overall-level-editor href="[[_getSelfLink(overallLevel)]]" token="[[token]]"></d2l-rubric-overall-level-editor> -->
+						<d2l-rubric-overall-level-feedback-editor
+							href="[[_getSelfLink(overallLevel)]]"
+							token="[[token]]"
+							level-index="[[cellIndex]]"
+							level-count="[[feedbackCount]]"
+						></d2l-rubric-overall-level-feedback-editor>
 					</div>
 				</template>
 			</div>
