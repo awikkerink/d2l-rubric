@@ -2,7 +2,7 @@
 
 'use strict';
 
-suite('<d2l-rubric-criterion-feedback-editor>', function() {
+suite('<d2l-rubric-feedback-editor>', function() {
 
 	var sandbox;
 
@@ -19,7 +19,7 @@ suite('<d2l-rubric-criterion-feedback-editor>', function() {
 
 		test('can be instantiated', function() {
 			var element = fixture('basic');
-			expect(element.is).to.equal('d2l-rubric-criterion-feedback-editor');
+			expect(element.is).to.equal('d2l-rubric-feedback-editor');
 		});
 
 		suite('edit feedback', function() {

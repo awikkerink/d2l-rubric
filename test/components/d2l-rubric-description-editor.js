@@ -2,7 +2,7 @@
 
 'use strict';
 
-suite('<d2l-rubric-criterion-description-editor>', function() {
+suite('<d2l-rubric-description-editor>', function() {
 
 	var sandbox;
 
@@ -19,7 +19,7 @@ suite('<d2l-rubric-criterion-description-editor>', function() {
 
 		test('can be instantiated', function() {
 			var element = fixture('basic');
-			expect(element.is).to.equal('d2l-rubric-criterion-description-editor');
+			expect(element.is).to.equal('d2l-rubric-description-editor');
 		});
 
 		suite('edit description', function() {
